@@ -54,7 +54,7 @@ public class RecipeSteps extends AppCompatActivity {
     private int initialBatteryLevel = -1;
     private int finalBatteryLevel = -1;
 
-    private long totalDuration = 0;
+//    private long totalDuration = 0;
 
     private long[] stepDurations; // Array to store duration of each step
     private boolean[] stepVisited; // Array to check if the step was previously visited
