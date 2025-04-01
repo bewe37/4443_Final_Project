@@ -9,7 +9,7 @@
     tools:context=".RecipeSteps"
     android:background="#206487">
 
-    <!-- Top Back Button for navigating to previous activity -->
+    <!-- Back Button -->
     <ImageButton
         android:id="@+id/backButton"
         android:layout_width="wrap_content"

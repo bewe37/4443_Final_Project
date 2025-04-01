@@ -11,7 +11,7 @@ import androidx.room.PrimaryKey;
 public class User {
 
     @ColumnInfo(name = "username")
-    public String username; // Set as primary key
+    public String username;
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "uid")

@@ -23,14 +23,14 @@ public class AccountProfile extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_account_profile);
 
-        // Get intent data (userId)
+        // Get intent data
         userId = getIntent().getIntExtra("uid", -1);
 
         // Initialize UI elements
         profileSettings = findViewById(R.id.linearLayoutProfileSettings);
         preference = findViewById(R.id.linearLayoutPreference);
 
-        // Go to account information settings (username, full name, etc)
+        // Go to account information settings
         profileSettings.setOnClickListener(v -> {
             Intent intent = new Intent(AccountProfile.this, ProfileSettingsActivity.class);
             intent.putExtra("uid", userId);
@@ -44,7 +44,7 @@ public class AccountProfile extends AppCompatActivity {
         });
 
 
-        // Logout function
+        // Logout
         logout = findViewById(R.id.linearLayoutLogout);
         logout.setOnClickListener(v ->{
             showLogoutDialog();

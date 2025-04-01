@@ -31,9 +31,7 @@ public class RecipeActivity extends AppCompatActivity {
 
     private TextView recipeOverview, recipeTime, recipeIngredients, recipeInstructions;
     private ImageView recipeImage;
-    private Button btnSave;
     private ExtendedFloatingActionButton btnCookNow;
-    private ImageButton btnBack;
     private MaterialToolbar topAppBar;
     private int userId;
     private BottomNavigationView bottomNavigation;
@@ -52,7 +50,6 @@ public class RecipeActivity extends AppCompatActivity {
         recipeIngredients = findViewById(R.id.recipeIngredients);
         recipeInstructions = findViewById(R.id.recipeInstructions);
         recipeImage = findViewById(R.id.recipeImage);
-        //btnSave = asdsadas(R.id.saveRecipeBtn);
         btnCookNow = findViewById(R.id.fabCookNow);
 
         topAppBar = findViewById(R.id.topAppBar);
@@ -83,7 +80,6 @@ public class RecipeActivity extends AppCompatActivity {
                 Spanned spanned = Html.fromHtml(fixedStepHtml, Html.FROM_HTML_MODE_LEGACY);
                 String plainText = spanned.toString().trim();
 
-                // Only add meaningful steps
                 if (!plainText.isEmpty()) {
                     cleanSteps.add(plainText);
                 }
@@ -104,7 +100,6 @@ public class RecipeActivity extends AppCompatActivity {
         bottomNavigation = findViewById(R.id.bottom_navigation);
         bottomNavigation.setOnItemSelectedListener(item -> {
             int itemId = item.getItemId();
-            // Detect if the home or the profile settings button is selected
             if (itemId == R.id.nav_home) {
                 Intent intent = new Intent(RecipeActivity.this, MainActivity.class);
                 intent.putExtra("uid", userId);

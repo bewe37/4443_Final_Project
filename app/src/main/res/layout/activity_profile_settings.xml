@@ -125,7 +125,7 @@
     <View android:layout_width="match_parent" android:layout_height="1dp" android:background="@android:color/darker_gray" android:layout_marginStart="24dp" android:layout_marginEnd="24dp"/>
 
 
-    <!-- Delete Account Item -->
+    <!-- Birth Date Item -->
     <LinearLayout
         android:id="@+id/layoutBirthDate"
         style="@style/ProfileItemLast"
@@ -149,6 +149,7 @@
             app:tint="@android:color/black" />
     </LinearLayout>
 
+    <!-- Delete Account Item -->
     <LinearLayout
         android:id="@+id/layoutDeleteAccount"
         android:layout_width="match_parent"

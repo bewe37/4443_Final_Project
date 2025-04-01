@@ -24,6 +24,7 @@
             app:titleCentered="true"
             app:titleTextColor="#002114"
             />
+
         <!-- Username Field -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/usernameLayout"
@@ -86,6 +87,7 @@
                 android:layout_height="wrap_content"/>
         </com.google.android.material.textfield.TextInputLayout>
 
+        <!-- Birth Date Field -->
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/birthdateLayout"
             android:layout_marginStart="16dp"

@@ -11,7 +11,6 @@
     >
 
     <!-- Back Button to Login Page -->
-
     <ImageButton
         android:id="@+id/backButton"
         android:paddingStart="10dp"
@@ -36,6 +35,7 @@
         android:textColor="#002114"
         android:textSize="28sp" />
 
+    <!-- Sign Up Body -->
     <TextView
         android:id="@+id/login_body"
         android:layout_width="match_parent"
@@ -46,11 +46,7 @@
         android:text="@string/let_s_create_a_new_account"
         android:textSize="16sp" />
 
-    <!-- Sign Up Body -->
-
-
-    <!-- Full Name TextInputLayout -->
-
+    <!-- Profile Picture -->
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/profilePictureLayout"
         android:layout_width="100dp"
@@ -62,7 +58,7 @@
         android:contentDescription="@string/profile_picture_avatar"
         android:src="@drawable/generic_avatar" />
 
-
+    <!-- Upload Image Button -->
     <Button
         android:id="@+id/uploadImageBut"
         style="@style/Widget.Material3.Button.TextButton.Icon"
@@ -76,6 +72,7 @@
         android:textColor="#206487"
         android:textSize="16sp" />
 
+    <!-- Full Name TextInputLayout -->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/fullNameLayout"
         android:paddingStart="16dp"
@@ -167,11 +164,6 @@
             android:focusable="false"/>
 
     </com.google.android.material.textfield.TextInputLayout>
-
-    <!-- Phone Number TextInputLayout -->
-
-    <!-- Address TextInputLayout -->
-
 
     <!-- Save Button -->
     <Button

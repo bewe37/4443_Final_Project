@@ -28,7 +28,8 @@ public interface RecipeDao {
     @Query("UPDATE recipes SET is_saved = :isSaved WHERE id = :recipeId")
     void updateSavedStatus(int recipeId, boolean isSaved);
 
-    @Query("SELECT * FROM recipes ORDER BY id LIMIT 10")
+    @Query("SELECT * FROM recipes ORDER BY id LIMIT " +
+            "10")
     List<Recipe> getTopPopularRecipes();
 
     @Update

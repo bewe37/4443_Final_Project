@@ -9,8 +9,6 @@
     android:background="#F6FAFE"
     tools:context=".MainActivity">
 
-    <!-- Make sure that screen is scrollable, because there might be multiple diary entrie -->
-
     <ScrollView
         android:id="@+id/main"
         android:layout_width="match_parent"
@@ -24,7 +22,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Avatar and "Dear (User Full Name)" header -->
+            <!-- Avatar and Hey (Full Name) -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,6 +64,7 @@
                     android:src="@drawable/generic_avatar" />
             </LinearLayout>
 
+            <!-- Most Popular Carousel -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -84,7 +83,6 @@
                 android:orientation="horizontal"/>
 
             <!-- Cateogry header row -->
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -95,6 +93,7 @@
                     android:layout_marginBottom="4dp"
                     android:layout_marginTop="24dp"/>
 
+            <!-- Category Chips -->
             <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -258,6 +257,7 @@
 
             </HorizontalScrollView>
 
+            <!-- Filtered Recipe List -->
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvFilteredRecipes"
                 android:layout_width="match_parent"

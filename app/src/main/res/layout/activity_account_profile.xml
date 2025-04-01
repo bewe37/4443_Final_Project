@@ -2,17 +2,14 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F6FAFE"
     android:padding="0dp">
 
-    <!-- Profile Header -->
 
     <!-- Profile Settings Section -->
-
     <LinearLayout
         android:id="@+id/linearLayoutPreference"
         android:layout_width="match_parent"
@@ -125,9 +122,6 @@
     </LinearLayout>
 
     <!-- Logout Section -->
-
-    <!-- Bottom Navigation -->
-
     <LinearLayout
         android:id="@+id/linearLayoutLogout"
         android:layout_width="match_parent"
@@ -168,6 +162,7 @@
 
     </LinearLayout>
 
+    <!-- Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"

@@ -31,7 +31,7 @@ public class SavedRecipes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_saved_recipes);
 
-        // Get user ID passed from the previous activity
+        // Get Intent data
         userId = getIntent().getIntExtra("uid", -1);
 
         // Set up RecyclerView and adapter
@@ -41,16 +41,15 @@ public class SavedRecipes extends AppCompatActivity {
         adapter = new FilteredRecipeAdapter(this, this::openRecipeDetail, recipeDao);
         recyclerView.setAdapter(adapter);
 
-        // Apply window insets for edge-to-edge UI
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0);
             return insets;
         });
 
-        // Fetch saved recipes synchronously in the background
+        // Fetch saved recipes
         executorService.execute(() -> {
-            List<Recipe> savedRecipes = recipeDao.getSavedRecipes(); // Synchronous call
+            List<Recipe> savedRecipes = recipeDao.getSavedRecipes();
             runOnUiThread(() -> adapter.submitList(savedRecipes));
         });
 

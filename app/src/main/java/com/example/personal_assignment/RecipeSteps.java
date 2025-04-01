@@ -67,7 +67,7 @@ public class RecipeSteps extends AppCompatActivity {
         buttonBack = findViewById(R.id.buttonPrev);
         buttonBackScreen = findViewById(R.id.backButton);
 
-        // Retrieve steps and uid from intent extras
+        // Retrieve steps and intent data
         steps = getIntent().getStringArrayListExtra("steps");
         userId = getIntent().getIntExtra("uid", -1);
 
@@ -81,14 +81,14 @@ public class RecipeSteps extends AppCompatActivity {
             Toast.makeText(RecipeSteps.this, "No Steps Found", Toast.LENGTH_SHORT).show();
         }
 
-        // Set up manual navigation buttons
+        // Set up navigation buttons (for touch interaction testing)
         buttonNext.setOnClickListener(v -> {
             if (currentStep < steps.size() - 1) {
                 recordCurrentStepDuration();
                 currentStep++;
                 updateStep();
             } else if (currentStep == steps.size() - 1) {
-                // Last step: record and finish, same as saying "I am done"
+                // Last step: record and finish
                 recordCurrentStepDuration();
                 displayAllInformationAndProceed();
                 try {
@@ -112,7 +112,6 @@ public class RecipeSteps extends AppCompatActivity {
 
         buttonBackScreen.setOnClickListener(v -> finish());
 
-        // Apply window insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
@@ -131,7 +130,7 @@ public class RecipeSteps extends AppCompatActivity {
     private void initPorcupine() {
         try {
             porcupineManager = new PorcupineManager.Builder()
-                    .setAccessKey("vQ5sqYyrsipysWAHUQjUh8AQeG8uETG8zBXx2oVxR2PGe2ZyKGd53g==")  // Replace with your actual access key
+                    .setAccessKey("o37jWqdlpM7fhH/aRqiJbOhuQy+auW2XFzvcmO+c5oqqqksapStYvw==")  // Replace with your actual access key
                     .setKeywordPath("Hey-Food_en_android_v3_0_0.ppn")
                     .setSensitivity(0.6f)
                     .build(getApplicationContext(), porcupineManagerCallback);
@@ -215,7 +214,7 @@ public class RecipeSteps extends AppCompatActivity {
         if (currentStep > 0) {
             long elapsed = currentTime - stepStartTime;
             if (currentStep <= steps.size()) {
-                stepDurations[currentStep - 1] += elapsed; // Add elapsed time for the previous step
+                stepDurations[currentStep - 1] += elapsed;
                 logStepDuration(currentStep - 1, stepDurations[currentStep - 1]);
             }
         }
@@ -239,7 +238,7 @@ public class RecipeSteps extends AppCompatActivity {
             builder.append(stepText);
             textTv.setText(builder);
 
-            // Update button text based on position
+            // Update button text based on position (steps)
             if (currentStep == steps.size() - 1) {
                 buttonNext.setText("Finish");
             } else {
@@ -328,7 +327,7 @@ public class RecipeSteps extends AppCompatActivity {
             intent.putExtra("uid", getIntent().getIntExtra("uid", -1));
             startActivity(intent);
             finish();
-        }, 45000); // Delay, e.g., 45 seconds
+        }, 45000);
     }
 
     private BroadcastReceiver batteryInfoReceiver = new BroadcastReceiver() {

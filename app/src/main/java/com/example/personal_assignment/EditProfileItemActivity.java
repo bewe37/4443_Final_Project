@@ -45,12 +45,6 @@ public class EditProfileItemActivity extends AppCompatActivity {
     private User currentUser;
     boolean requiresRelogin;  // Tracks if user must re-login after changes
 
-    // List of valid provinces
-    private static final List<String> CANADIAN_PROVINCES = Arrays.asList(
-            "AB", "BC", "MB", "NB", "NL", "NS", "ON", "PE", "QC", "SK",
-            "NT", "NU", "YT"
-    );
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,7 +59,7 @@ public class EditProfileItemActivity extends AppCompatActivity {
 
         btnSave = findViewById(R.id.btnSave);
 
-        // Initialize UI layout (parent elements)
+        // Initialize UI layout
         usernameLayout = findViewById(R.id.usernameLayout);
         passwordLayout = findViewById(R.id.passwordLayout);
         fullNameLayout = findViewById(R.id.fullNameLayout);
@@ -79,7 +73,6 @@ public class EditProfileItemActivity extends AppCompatActivity {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
         });
-
 
         // Get intent data
         userId = getIntent().getIntExtra("uid", -1);

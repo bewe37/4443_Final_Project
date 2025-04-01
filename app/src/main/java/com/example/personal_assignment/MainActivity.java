@@ -50,11 +50,11 @@ public class MainActivity extends AppCompatActivity {
         profilePic = findViewById(R.id.profilePicture);
         headerName = findViewById(R.id.main_header);
 
-        // Initialize DB access objects
+        // Initialize DB
         recipeDao = ProfileDatabase.getDatabase(getApplicationContext()).recipeDao();
         userDao = ProfileDatabase.getDatabase(getApplicationContext()).userDao();
 
-        // Get userID passed from the login activity
+        // Get Intent data
         userId = getIntent().getIntExtra("uid", -1);
 
         // Setup popular recipes carousel
@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
         filteredAdapter = new FilteredRecipeAdapter(this, this::openRecipeDetail, recipeDao);
         rvFiltered.setAdapter(filteredAdapter);
 
-        // Query and update popular recipes synchronously
+        // Update popular recipes
         executorService.execute(() -> {
             List<Recipe> popularRecipes = recipeDao.getTopPopularRecipes(); // Synchronous call
             runOnUiThread(() -> carouselAdapter.submitList(popularRecipes));
         });
 
-        // Query and update all recipes synchronously for the filtered list
+        // Update filtered recipes list
         executorService.execute(() -> {
             List<Recipe> allRecipes = recipeDao.getAllRecipes(); // Synchronous call
             runOnUiThread(() -> filteredAdapter.submitList(allRecipes));
@@ -136,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
             return false;
         });
 
-        // Apply window insets
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);

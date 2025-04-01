@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
-        <!-- Left: Recipe Image -->
+        <!-- Recipe Image -->
         <ImageView
             android:id="@+id/recipeImage"
             android:layout_width="88dp"
@@ -25,7 +25,7 @@
             android:background="@drawable/rounded_image"
             android:clipToOutline="true" />
 
-        <!-- Right: Text Info -->
+        <!-- Recipe Info -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
             android:orientation="vertical"
             android:layout_gravity="center">
 
-            <!-- Title + Favorite Icon Row -->
+            <!-- Favorite Icon + Recipe Title -->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -59,8 +59,6 @@
                     android:src="@drawable/ic_heart_outlined"
                     android:contentDescription="Favorite" />
             </LinearLayout>
-
-            <!-- Rating -->
 
 
             <!-- Time + Ingredient Count -->

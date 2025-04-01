@@ -42,8 +42,10 @@ public class FoodPreference extends AppCompatActivity {
         // Initialize Room DAO
         userDao = userDB.userDao();
 
+        // Get Intent data
         currentUserUid = getIntent().getIntExtra("uid", -1);
 
+        // Initialize UI elements
         chipGroup = findViewById(R.id.chipGroup);
         continueButton = findViewById(R.id.btnContinueLogin);
         skipButton  = findViewById(R.id.btnSkip);

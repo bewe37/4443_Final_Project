@@ -10,11 +10,9 @@
     android:orientation="vertical"
     >
 
-    <!-- Back Button to Login Page -->
-
-    <!-- Sign Up Header -->
+    <!-- Food Preference Header -->
     <TextView
-        android:id="@+id/signup_header"
+        android:id="@+id/food_preference_header"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
         android:layout_width="wrap_content"
@@ -25,8 +23,9 @@
         android:textSize="28sp"
         android:layout_marginTop="24dp"/>
 
+    <!-- Food Preference Body -->
     <TextView
-        android:id="@+id/login_body"
+        android:id="@+id/food_preference_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto"
@@ -35,8 +34,7 @@
         android:text="Select from the list what type of food do you prefer"
         android:textSize="16sp" />
 
-
-    <!-- Save Button -->
+    <!-- Preference Chips -->
     <com.google.android.material.chip.ChipGroup
         android:id="@+id/chipGroup"
         android:layout_width="match_parent"
@@ -177,7 +175,7 @@
         android:paddingStart="16dp"
         android:paddingEnd="16dp">
 
-        <!-- SKIP (Outlined) -->
+        <!-- Skip Button -->
         <Button
             android:id="@+id/btnSkip"
             style="?attr/materialButtonStyle"
@@ -191,7 +189,7 @@
             android:textSize="16sp"
             android:textColor="#0A1E28"/>
 
-        <!-- CONTINUE (Filled) -->
+        <!-- Continue Button -->
         <Button
             android:id="@+id/btnContinueLogin"
             style="?attr/materialButtonStyle"
