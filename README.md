@@ -13,7 +13,7 @@ Our application is built to enhance the cooking experience by streamlining how u
 3. After collecting your access key, scroll down to where it says **'Start Building'** and click **'Wake Word'**
 4. Under the language section select **'English'**
 5. Under Wake Word section type **'Hey Food'**
-6. Click the **'Train'** button: a **.ppn file** will be generated and download on your device
+6. Click the **'Train'** button and choose the platform as **Android**: a **.ppn file** will be generated and download on your device
 7. Add the downloaded .ppn file into the **assets folder** of this project
 8. In the **RecipeSteps.java**, locate the **initPorcupine()** method and 
     - Replace the current value in **.setAccessKey()** with **your access key**
